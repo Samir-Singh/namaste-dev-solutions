@@ -32,8 +32,8 @@ module.exports = capitalizeWords;
 function capitalizeWords(sentence) {
   // Your implementation
   return sentence
-    .trim()
-    .split(/\s+/)
+    .trim() // this is used to remove extra spaces from left and right of the string
+    .split(/\s+/) // this is used to remove the extra spaces between the two words of string
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
     .join(" ");
 }
