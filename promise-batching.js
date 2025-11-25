@@ -13,21 +13,28 @@ async function asyncFunction(status, timer) {
 }
 
 async function batchApiCalls(apiCalls, chunkSize = 2) {
-  let ans = [];
-  for (let i = 0; i < apiCalls.length; i += chunkSize) {
-    chunk = apiCalls.splice(0, chunkSize);
+  let result = [];
 
-    const response = await Promise.allSettled(chunk.map((fn) => fn()));
+  for (let i = 0; i < promiseArray.length; i += chunkSize) {
+    let chunk = promiseArray.slice(i, i + chunkSize);
+    let res = await Promise.allSettled(chunk.map((fn) => fn()));
 
-    response.forEach((res) => {
-      if (res.status === "fulfilled") {
-        ans.push(res.value);
+    res.forEach((item) => {
+      if (item.status === "fulfilled") {
+        result.push({
+          status: "fulfilled",
+          value: item.value,
+        });
       } else {
-        ans.push(res.reason);
+        result.push({
+          status: "rejected",
+          reason: item.reason,
+        });
       }
     });
   }
-  return ans;
+
+  return result;
 }
 
 const apiCalls = [

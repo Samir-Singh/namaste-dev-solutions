@@ -2,7 +2,7 @@
 
 /* 
     Notes
-    item.chartAt(index) : returns the character at particular index
+    item.charAt(index) : returns the character at particular index
     item.slice(index) : return the remaining character on the right side of the string including index also
     item.slice(index1, index2) : return the portion of element from index1 included to element upto index2-1
 */
