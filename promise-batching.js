@@ -12,7 +12,7 @@ async function asyncFunction(status, timer) {
   });
 }
 
-async function batchApiCalls(apiCalls, chunkSize = 2) {
+async function batchApiCalls(promiseArray, chunkSize = 2) {
   let result = [];
 
   for (let i = 0; i < promiseArray.length; i += chunkSize) {
