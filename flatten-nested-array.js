@@ -41,8 +41,6 @@ function flattenArray(arr) {
   }
 
   return ans.reverse();
-
-  return ans;
 }
 
 //For the purpose of user debugging.
