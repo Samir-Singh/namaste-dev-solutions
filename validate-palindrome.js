@@ -4,7 +4,7 @@
     Notes: 
         Here we are using two pointer approach from left and right side.
         1. If the str[i] and str[j] is alphanumeric than check if it is not equal than return false else increase from left and decrease from right.
-        2. If the str[i] and str[j] is not alphanumeric than check which one is not left one right one than according to that increase or decrease from left or right respectively.
+        2. If the str[i] and str[j] is not alphanumeric than check which one is not left one or right one than according to that increase or decrease from left or right respectively.
 */
 
 function validatePalindrome(str) {

@@ -4,7 +4,7 @@ function groupBy(arr, key) {
   // Your implementation
   let result = {};
   for (let item of arr) {
-    if (result.hasOwnProperty(item[key])) {
+    if (item[key] in result) {
       result[item[key]].push(item);
     } else {
       result[item[key]] = [item];
