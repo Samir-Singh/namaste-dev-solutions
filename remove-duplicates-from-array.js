@@ -31,3 +31,11 @@ function removeDuplicates(arr) {
 }
 removeDuplicates([1, 2, 2, 3, 4, 4]);
 module.exports = removeDuplicates;
+
+// Approach 2 : Set automatically removes the repeated items from the array
+function removeDuplicates(arr) {
+  // your code here
+  return [...new Set(arr)];
+}
+removeDuplicates([true, false, true]);
+module.exports = removeDuplicates;
